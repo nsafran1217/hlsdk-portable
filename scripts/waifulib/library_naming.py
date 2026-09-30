@@ -67,6 +67,7 @@ DEFINES = [
 'XASH_HURD',
 'XASH_S390X',
 'XASH_IA64',
+'XASH_HPPA',
 ]
 
 def configure(conf):
@@ -182,6 +183,8 @@ def configure(conf):
 		buildarch = "s390x"
 	elif conf.env.XASH_IA64:
 		buildarch = "ia64"
+	elif conf.env.XASH_HPPA:
+		buildarch = "hppa"
 	else:
 		raise conf.fatal("Place your architecture name in build.h and library_naming.py!\n"
 			"If this is a mistake, try to fix conditions above and report a bug")
